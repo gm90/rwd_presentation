@@ -1,0 +1,7 @@
+ul > li{
+	list-style-type: square;
+}
+
+a, a:visited{
+	color: #4acfff !important;
+}
