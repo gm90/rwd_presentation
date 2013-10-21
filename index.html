@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Mobile Development</title>
     <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/highlight-monokai-sublime.css">
     <link rel="stylesheet" href="css/theme/simple.css" id="theme">    
     <link rel="stylesheet" href="css/custom.css" id="theme">  
     <link rel="icon" href="images/favicon.ico" id="theme">  
@@ -18,20 +19,197 @@
         <div class="slides">
  
             <section>
-                <h2>Opportunities/Challenges in Mobile Development</h2>
+                <h3>Opportunities/Challenges in Mobile Development</h3>
                 <a href="https://github.com/gm90">gm90</a>
             </section>
  
             <section id="agenda">
                 <ul>
                     <li>Challenges</li>
+                    <li>Options</li>
                     <li>Opportunities</li>
+                    <li>Tools</li>
                 </ul>
             </section>
  
+            <!-- Challenges of mobile development -->
             <section>
-                <h1>Opportunities</h1>
-                <p>Return to agenda<a href="#/agenda"> 2</a>
+                <section>
+                    <h3>Challenges</h3>
+                </section>
+                <section>
+                    <ul>
+                        <li class="fragment">Multiple devices (Samsung, Apple, HTC, RIM, Chromecast + many more)</li>
+                        <li class="fragment">Multiple OS's (Android, iOS, Windows, Symbian, Kindle, etc..)</li>
+                    </ul>
+                    <img class="fragment" src="images/few-devices-to-test-with.jpg" alt="A few devices to test with" /></li>
+                </section>
+                <section>
+                    <p>On top of that.....we need to cater for</p>
+                    <ul>
+                        <li class="fragment">Connectivity, Speed (Edge, 3G, 4G), Data Limits</li>
+                        <li class="fragment">Lack/Excess screen estate</li>
+                        <li class="fragment">Running out of time to react, HMV</li>
+                    </ul>
+                </section>
+                <section>
+                    
+                </section>
+            </section>
+
+            <!-- Decisions that affect development for mobile-->
+            <section>
+                <section>
+                    <h3>Options</h3>
+                    <h5>Despite all this we have many options to overcome the complexities</h5>
+                </section>
+                <section>
+                    <h3>Native vs. WebApp vs. Hybrid</h3>
+                    <h5>Probably the most widely debated question in mobile development</h5>
+                </section>
+                <section>
+                    <h3>Native Application</h3>
+                    <div class="multiple-lists two-lists">
+                        <div>
+                            <strong>Advantages</strong>
+                            <ul>
+                                <li>High Performance</li>
+                                <li>Argument for usability</li>
+                                <li>Increased access to devices capabilities</li>
+                                <li>Potentially restrained by approval process (Apple)</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <strong>Disadvantages</strong>
+                            <ul>
+                                <li>Massively Costly</li>
+                                <li>Maintenance is extremely difficult</li>
+                                <li>Different code base and language for each platform (will continue to change)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Web Application</h3>
+                    <div class="multiple-lists two-lists">
+                        <div>
+                            <strong>Advantages</strong>
+                            <ul>
+                                <li>HTML5 Support is very good, and is standard across all devices</li>
+                                <li>CSS/SASS/LESS is becoming increasingly powerful</li>
+                                <li>Javascript has seen significant speed increases over the past few years</li>
+                                <li>Integration with stock applications</li>
+                                <li>Can be saved to device as if it were a native app</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <strong>Disadvantages</strong>
+                            <ul>
+                                <li>Perceived low performance (specifically related to gaming)</li>
+                                <li>Look and feel not inline with device</li>
+                                <li>Limited access to device capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Hybrid Application</h3>
+                    <p>A hybrid application consists of an application written in web standards contained within a wrapper that provides full access to the devices native capabilities via a javascript API</p>
+                    <ul>
+                        <li>PhoneGap/Apache Cordova</li>
+                        <li>Titanium</li>
+                    </ul>
+                </section>
+                <section>
+                    <div class="multiple-lists two-lists">
+                        <h3>Hybrid Application</h3>
+                        <div>
+                            <strong>Advantages</strong>
+                            <ul>
+                                <li>Continue to use web standards so the majority of your codebase is standard across all devices</li>
+                                <li>Provides extended access into the device</li>
+                                <li>Phonegap Build provides an automated service to build your web application inside your wrapper</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <strong>Disadvantages</strong>
+                            <ul>
+                                <li>Depending on your requirements maybe overkill</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Opportunities that of mobile development -->
+            <section>
+                <section>
+                    <h3>Opportunities</h3>
+                    <h5>The good news is that mobile development opens up a wealth of new opportunities</h5>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Access anywhere</li>
+                        <li>Offline/Online</li>
+                        <li>Geolocation</li>
+                        <li>Instant messaging/Communication</li>
+                        <li>Video</li>
+                        <li>VIP</li>
+                        <li>Augmented reality</li>
+                    </ul>
+                </section>
+
+                <section>
+
+                </section>
+
+
+            </section>
+
+            <section>
+                <section>
+                    <h3>Tools</h3>
+                    <h5>Tools that make our lives easier</h5>
+                </section>
+                <section>
+                    <h3>Media Queries</h3>
+                    <pre><code>
+    <!-- CSS media query on a link element -->
+    <link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+
+    <!-- CSS media query within a style sheet -->
+    <style>
+        @media (max-width: 600px) {
+            .facet_sidebar {
+                display: none;
+            }
+        }
+    </style>
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Remote debugging (Chrome and Safari)</h3>
+                    
+                </section>
+            </section>
+
+
+            <section>
+                <section>
+                    <h1>Credits</h1>
+                </section>
+                <section>
+                    <ul>
+                        <li>Few Devices - Image (<a href="https://plus.google.com/100715585232399028955/posts/YRP8TfAEVCZ">Image</a>)</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </section>
             </section>
  
         </div>
@@ -42,7 +220,18 @@
     <script>
         Reveal.initialize({
             controls: false,
-            transition: "linear"
+            // progress: false,
+            transition: "linear",
+            dependencies: [
+                // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                // Syntax highlight for <code> elements
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // Zoom in and out with Alt+click
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                // Remote control your reveal.js presentation using a touch device
+                { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
         });
     </script>
 </body>

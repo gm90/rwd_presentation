@@ -1,7 +1,23 @@
+/* Overide progress color */
+.reveal .progress span{
+	background: #999;
+}
+
+/* Overide list style*/
 ul > li{
 	list-style-type: square;
 }
 
+/* Overide font color*/
 a, a:visited{
 	color: #4acfff !important;
+}
+
+div.multiple-lists > div{
+	float:left;
+	margin: 10px 0;
+}
+
+div.multiple-lists.two-lists > div{
+	width: 50%;
 }
