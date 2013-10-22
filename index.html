@@ -42,6 +42,8 @@
                         <li class="fragment">Multiple devices (Samsung, Apple, HTC, RIM, Chromecast + many more)</li>
                         <li class="fragment">Multiple OS's (Android, iOS, Windows, Symbian, Kindle, etc..)</li>
                     </ul>
+                    </br>
+                    </br>
                     <img class="fragment" src="images/few-devices-to-test-with.jpg" alt="A few devices to test with" /></li>
                 </section>
                 <section>
@@ -69,6 +71,7 @@
                 </section>
                 <section>
                     <h3>Native Application</h3>
+                    <p>
                     <div class="multiple-lists two-lists">
                         <div>
                             <strong>Advantages</strong>
@@ -76,7 +79,7 @@
                                 <li>High Performance</li>
                                 <li>Argument for usability</li>
                                 <li>Increased access to devices capabilities</li>
-                                <li>Potentially restrained by approval process (Apple)</li>
+                                <li>Can integrate heavily with the devices' operating system</li>
                             </ul>
                         </div>
 
@@ -86,6 +89,7 @@
                                 <li>Massively Costly</li>
                                 <li>Maintenance is extremely difficult</li>
                                 <li>Different code base and language for each platform (will continue to change)</li>
+                                <li>Potentially restrained by approval process (Apple)</li>
                             </ul>
                         </div>
                     </div>
@@ -96,10 +100,10 @@
                         <div>
                             <strong>Advantages</strong>
                             <ul>
-                                <li>HTML5 Support is very good, and is standard across all devices</li>
+                                <li>HTML5 Support is very good.</li>
                                 <li>CSS/SASS/LESS is becoming increasingly powerful</li>
-                                <li>Javascript has seen significant speed increases over the past few years</li>
-                                <li>Integration with stock applications</li>
+                                <li>Javascript has seen significant speed increases over the past few years (V8, Nitro)</li>
+                                <li>Integration with stock applications isimproving (Camera - WebRTC, GPS, Contacts)</li>
                                 <li>Can be saved to device as if it were a native app</li>
                             </ul>
                         </div>
@@ -117,10 +121,9 @@
                 <section>
                     <h3>Hybrid Application</h3>
                     <p>A hybrid application consists of an application written in web standards contained within a wrapper that provides full access to the devices native capabilities via a javascript API</p>
-                    <ul>
-                        <li>PhoneGap/Apache Cordova</li>
-                        <li>Titanium</li>
-                    </ul>
+                    </br>
+                    <strong>PhoneGap/Apache Cordova</strong></br></br>
+                    <strong>Titanium</strong>
                 </section>
                 <section>
                     <div class="multiple-lists two-lists">
@@ -176,6 +179,47 @@
                     <h5>Tools that make our lives easier</h5>
                 </section>
                 <section>
+                    <h3>Viewport/Meta tags</h3>
+                    <pre><code>
+    <!-- Sets viewport to be the width of the device, also prevents zooming -->
+    <meta name="viewport" content="width=device-width, user-scalable=false;">
+
+    <!-- IE10 version -->
+    @viewport{
+        zoom: 1.0;
+        width: extend-to-zoom;
+    }
+
+    <!-- Allow app to be set up as standalone in iOS. Android requires a javascript solution -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+                    </code></pre>
+
+                    Always consider whether disable zooming is absolutely necessary. If you wish to prevent zooming it maybe a good idea to the ability to increase text size.
+                </section>
+                <section>
+                    <h3>Internal links</h3>
+                    <pre><code>
+    <!-- Disable automatic linking in iOS and Android -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Telephone Links -->
+    <a href="tel://0207 456 4577">Ring Motability</a>
+
+    <!-- Mail Links -->
+    <a href="mailto:lunch@learn.com?cc=garymc@mo.co.uk&subject=
+        Boring&body=Oh%20boy%20this%20presenter%20is%20boring!">Mail</a>
+
+    <!-- SMS message -->
+    <a href="sms:1-408-555-1212">New SMS Message</a>
+
+    <!-- Map Links, directions specified by daddr & saddr -->
+    <a href="http://maps.apple.com/?daddr=SE1 9HB&saddr=Tower Bridge">Directions</a>
+    <!-- Android version -->
+    <a href="geo:0,0?q=Tower Bridge">Tower Bridge</a>
+
+                    </code></pre>
+                </section>
+                <section>
                     <h3>Media Queries</h3>
                     <pre><code>
     <!-- CSS media query on a link element -->
@@ -189,7 +233,9 @@
             }
         }
     </style>
+
                     </code></pre>
+    Shameless example: <a href="http://www.g-mccann.co.uk/gnoble2/">Example</a>
                 </section>
                 <section>
                     <h3>Remote debugging (Chrome and Safari)</h3>
@@ -228,9 +274,7 @@
                 // Syntax highlight for <code> elements
                 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
                 // Zoom in and out with Alt+click
-                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                // Remote control your reveal.js presentation using a touch device
-                { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
             ]
         });
     </script>
