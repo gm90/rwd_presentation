@@ -21,3 +21,11 @@ div.multiple-lists > div{
 div.multiple-lists.two-lists > div{
 	width: 50%;
 }
+
+img{
+	border: none !important;
+}
+
+img.logo{
+	width: 200px;
+}
